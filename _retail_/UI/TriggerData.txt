@@ -34,6 +34,7 @@ TC_IMAGE=WESTRING_TRIGCAT_IMAGE,ReplaceableTextures\WorldEditUI\Actions-Nothing
 TC_AI=WESTRING_TRIGCAT_AI,ReplaceableTextures\WorldEditUI\Actions-AI
 TC_CAMERA=WESTRING_TRIGCAT_CAMERA,ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_CINEMATIC=WESTRING_TRIGCAT_CINEMATIC,ReplaceableTextures\WorldEditUI\Actions-Camera
+TC_FRAMES="Фреймы",ReplaceableTextures\WorldEditUI\Actions-Camera
 TC_LIGHTNING=WESTRING_TRIGCAT_LIGHTNING,ReplaceableTextures\WorldEditUI\Actions-Nothing
 TC_NEUTRALBUILDING=WESTRING_TRIGCAT_NEUTRALBUILDING,ReplaceableTextures\WorldEditUI\Actions-Goldmine
 TC_REGION=WESTRING_TRIGCAT_REGION,ReplaceableTextures\WorldEditUI\Actions-Region
@@ -149,6 +150,9 @@ region=0,0,1,WESTRING_TRIGTYPE_region
 trackable=0,0,1,WESTRING_TRIGTYPE_trackable
 unitpool=0,0,1,WESTRING_TRIGTYPE_unitpool
 widget=0,0,1,WESTRING_TRIGTYPE_widget
+framehandle=1,1,0 ,"Frame Handle"
+framepointtype=1,1,0 ,"Frame Point Type"
+originframetype=1,1,0 ,"Frame Type Origin"
 
 // Trigger Non-Variable Types - Atomic (built-in to the language)
 code=0,0,0,WESTRING_TRIGTYPE_code
@@ -2080,6 +2084,43 @@ InvulnerabilityVulnerable=0,invulnerableoption,false,WESTRING_INVULNERABILITY_VU
 // Availability option
 AvailabilityOptionAvailable=0,availabilityoption,true,WESTRING_AVAILABILITY_AVAILABLE
 AvailabilityOptionUnavailable=0,availabilityoption,false,WESTRING_AVAILABILITY_UNAVAILABLE
+
+// FramePointType
+FRAMEPOINT_TOPLEFT=0,framepointtype,FRAMEPOINT_TOPLEFT,"Вверх-лево"
+FRAMEPOINT_TOP=0,framepointtype,FRAMEPOINT_TOP,"Вверх"
+FRAMEPOINT_TOPRIGHT=0,framepointtype,FRAMEPOINT_TOPRIGHT,"Вверх-право"
+FRAMEPOINT_LEFT=0,framepointtype,FRAMEPOINT_LEFT,"Лево"
+FRAMEPOINT_CENTER=0,framepointtype,FRAMEPOINT_CENTER,"По центру"
+FRAMEPOINT_RIGHT=0,framepointtype,FRAMEPOINT_RIGHT,"Право"
+FRAMEPOINT_BOTTOMLEFT=0,framepointtype,FRAMEPOINT_BOTTOMLEFT,"Низ-лево"
+FRAMEPOINT_BOTTOM=0,framepointtype,FRAMEPOINT_BOTTOM,"Вниз"
+FRAMEPOINT_BOTTOMRIGHT=0,framepointtype,FRAMEPOINT_BOTTOMRIGHT,"Низ-Право"
+
+// Originframetype
+ORIGIN_FRAME_GAME_UI=0,originframetype,ORIGIN_FRAME_GAME_UI,"ORIGIN_FRAME_GAME_UI"
+ORIGIN_FRAME_COMMAND_BUTTON=0,originframetype,ORIGIN_FRAME_COMMAND_BUTTON,"ORIGIN_FRAME_COMMAND_BUTTON"
+ORIGIN_FRAME_HERO_BAR=0,originframetype,ORIGIN_FRAME_HERO_BAR,"ORIGIN_FRAME_HERO_BAR"
+ORIGIN_FRAME_HERO_BUTTON=0,originframetype,ORIGIN_FRAME_HERO_BUTTON,"ORIGIN_FRAME_HERO_BUTTON"
+ORIGIN_FRAME_HERO_HP_BAR=0,originframetype,ORIGIN_FRAME_HERO_HP_BAR,"ORIGIN_FRAME_HERO_HP_BAR"
+ORIGIN_FRAME_HERO_MANA_BAR=0,originframetype,ORIGIN_FRAME_HERO_MANA_BAR,"ORIGIN_FRAME_HERO_MANA_BAR"
+ORIGIN_FRAME_HERO_BUTTON_INDICATOR=0,originframetype,ORIGIN_FRAME_HERO_BUTTON_INDICATOR,"ORIGIN_FRAME_HERO_BUTTON_INDICATOR"
+ORIGIN_FRAME_ITEM_BUTTON=0,originframetype,ORIGIN_FRAME_ITEM_BUTTON,"ORIGIN_FRAME_ITEM_BUTTON"
+ORIGIN_FRAME_MINIMAP=0,originframetype,ORIGIN_FRAME_MINIMAP,"ORIGIN_FRAME_MINIMAP"
+ORIGIN_FRAME_MINIMAP_BUTTON=0,originframetype,ORIGIN_FRAME_MINIMAP_BUTTON,"ORIGIN_FRAME_MINIMAP_BUTTON"
+ORIGIN_FRAME_SYSTEM_BUTTON=0,originframetype,ORIGIN_FRAME_SYSTEM_BUTTON,"ORIGIN_FRAME_SYSTEM_BUTTON"
+ORIGIN_FRAME_TOOLTIP=0,originframetype,ORIGIN_FRAME_TOOLTIP,"ORIGIN_FRAME_TOOLTIP"
+ORIGIN_FRAME_UBERTOOLTIP=0,originframetype,ORIGIN_FRAME_UBERTOOLTIP,"ORIGIN_FRAME_UBERTOOLTIP"
+ORIGIN_FRAME_CHAT_MSG=0,originframetype,ORIGIN_FRAME_CHAT_MSG,"ORIGIN_FRAME_CHAT_MSG"
+ORIGIN_FRAME_UNIT_MSG=0,originframetype,ORIGIN_FRAME_UNIT_MSG,"ORIGIN_FRAME_UNIT_MSG"
+ORIGIN_FRAME_TOP_MSG=0,originframetype,ORIGIN_FRAME_TOP_MSG,"ORIGIN_FRAME_TOP_MSG"
+ORIGIN_FRAME_PORTRAIT=0,originframetype,ORIGIN_FRAME_PORTRAIT,"ORIGIN_FRAME_PORTRAIT"
+ORIGIN_FRAME_WORLD_FRAME=0,originframetype,ORIGIN_FRAME_WORLD_FRAME,"ORIGIN_FRAME_WORLD_FRAME"
+ORIGIN_FRAME_SIMPLE_UI_PARENT=0,originframetype,ORIGIN_FRAME_SIMPLE_UI_PARENT,"ORIGIN_FRAME_SIMPLE_UI_PARENT"
+ORIGIN_FRAME_PORTRAIT_HP_TEXT=0,originframetype,ORIGIN_FRAME_PORTRAIT_HP_TEXT,"ORIGIN_FRAME_PORTRAIT_HP_TEXT"
+ORIGIN_FRAME_PORTRAIT_MANA_TEXT=0,originframetype,ORIGIN_FRAME_PORTRAIT_MANA_TEXT,"ORIGIN_FRAME_PORTRAIT_MANA_TEXT"
+ORIGIN_FRAME_UNIT_PANEL_BUFF_BAR=0,originframetype,ORIGIN_FRAME_UNIT_PANEL_BUFF_BAR,"ORIGIN_FRAME_UNIT_PANEL_BUFF_BAR"
+ORIGIN_FRAME_UNIT_PANEL_BUFF_BAR_LABEL=0,originframetype,ORIGIN_FRAME_UNIT_PANEL_BUFF_BAR_LABEL,"ORIGIN_FRAME_UNIT_PANEL_BUFF_BAR_LABEL"
+
 
 // ShowHide option
 ShowHideHide=0,showhideoption,false,WESTRING_SHOWHIDE_HIDE
@@ -8476,6 +8517,47 @@ _DestroyFogModifier_Category=TC_VISIBILITY
 //_Cheat_Defaults="warnings"
 //_Cheat_Category=TC_OBSOLETE
 
+// Frame actions
+BlzHideOriginFrames=0,boolean
+_BlzHideOriginFrames_DisplayName="Отключение оригинальных фреймов"
+_BlzHideOriginFrames_Parameters="Отключить оригинальные фремы?: ",~Enable
+_BlzHideOriginFrames_Defaults=FALSE
+_BlzHideOriginFrames_Category=TC_FRAMES
+
+BlzCreateFrameByTypeBJ=0,string,string,framehandle,string,integer
+_BlzCreateFrameByTypeBJ_DisplayName="Создать фрейм по типу из шаблона"
+_BlzCreateFrameByTypeBJ_Parameters="Создать фрейм типа ",~String," по имени ",~String," От фрема родителя ",~framehandle," По шаблону ",~String," В контекст ",~Integer
+_BlzCreateFrameByTypeBJ_Defaults="BACKDROP","FaceButtonIcon",,"",0
+_BlzCreateFrameByTypeBJ_Category=TC_FRAMES
+
+BlzFrameSetAllPoints=0,framehandle,framehandle
+_BlzFrameSetAllPoints_DisplayName="Сопоставить позиции фреймов"
+_BlzFrameSetAllPoints_Parameters="Фрейм ",~framehandle, "сопоставить с",~framehandle
+_BlzFrameSetAllPoints_Category=TC_FRAMES
+
+BlzFrameSetTexture=0,framehandle,string,integer,boolean
+_BlzFrameSetTexture_DisplayName="Установить текстуру для фрейма"
+_BlzFrameSetTexture_Parameters="Установить для ",~framehandle," текстуру пути ",~String," с каким-то флагом ",~integer," и включить смешивание? ",~boolean
+_BlzFrameSetTexture_Defaults=,"ReplaceableTextures\CommandButtons\BTNSelectHeroOn",0,TRUE
+_BlzFrameSetTexture_Category=TC_FRAMES
+
+BlzFrameSetSize=0,framehandle,real,real
+_BlzFrameSetSize_DisplayName="Масштабировать фрейм"
+_BlzFrameSetSize_Parameters="Для фрейма ",~framehandle," установить мастштаб по x ",~real," и по y ",~real
+_BlzFrameSetSize_Defaults=,0.039,0.039
+_BlzFrameSetSize_Category=TC_FRAMES
+
+BlzFrameSetAbsPoint=0,framehandle,framepointtype,real,real
+_BlzFrameSetAbsPoint_DisplayName="Установить абсолютную позицию фрейма"
+_BlzFrameSetAbsPoint_Parameters="Для фрейма ",~framehandle," центрировать позицию в ",~framepointtype, по х ,~real, и по у ,~real
+_BlzFrameSetAbsPoint_Defaults=,FRAMEPOINT_CENTER,0.4,0.3
+_BlzFrameSetAbsPoint_Category=TC_FRAMES
+
+BlzGetOriginFrameBJ=0,originframetype,integer
+_BlzGetOriginFrameBJ_DisplayName="Получить оригинальный фрейм"
+_BlzGetOriginFrameBJ_Parameters=" Получить фрейм типа ",~originframetype," по индексу ",~integer
+_BlzGetOriginFrameBJ_Defaults=ORIGIN_FRAME_GAME_UI,0
+_BlzGetOriginFrameBJ_Category=TC_FRAMES
 
 
 //***************************************************************************
