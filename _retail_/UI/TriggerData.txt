@@ -12171,6 +12171,12 @@ _GetLastCreatedTextTag_Parameters="Последний созданный пар�
 _GetLastCreatedTextTag_Defaults=
 _GetLastCreatedTextTag_Category=TC_LAST
 
+// returns framehandle
+GetLastCreatedFrameHandle=1,0,framehandle
+_GetLastCreatedFrameHandle_DisplayName="Последний созданный фрейм"
+_GetLastCreatedFrameHandle_Parameters="Последний созданный фрейм"
+_GetLastCreatedFrameHandle_Defaults=
+_GetLastCreatedFrameHandle_Category=TC_LAST
 
 //***************************************************************************
 [DefaultTriggerCategories]
