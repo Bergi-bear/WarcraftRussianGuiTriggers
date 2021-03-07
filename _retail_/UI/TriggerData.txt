@@ -11249,14 +11249,14 @@ _GetConstructedStructure_Defaults=
 _GetConstructedStructure_Category=TC_EVENTRESPONSE
 
 GetEventDamageSource=1,0,unit
-_GetEventDamageSource_DisplayName="Источник урона"
-_GetEventDamageSource_Parameters="Источник урона"
+_GetEventDamageSource_DisplayName="Наносящая урон боевая единица"
+_GetEventDamageSource_Parameters="Наносящая урон боевая единица"
 _GetEventDamageSource_Defaults=
 _GetEventDamageSource_Category=TC_EVENTRESPONSE
 
 BlzGetEventDamageTarget=1,0,unit
-_BlzGetEventDamageTarget_DisplayName="Урон по цели"
-_BlzGetEventDamageTarget_Parameters="Урон по цели"
+_BlzGetEventDamageTarget_DisplayName="Получившая урон боевая единица"
+_BlzGetEventDamageTarget_Parameters="Получившая урон боевая единица"
 _BlzGetEventDamageTarget_Defaults=
 _BlzGetEventDamageTarget_Category=TC_EVENTRESPONSE
 
